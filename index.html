@@ -40,10 +40,10 @@ nav {
   letter-spacing: 0.06em; color: var(--offwhite); text-decoration: none;
 }
 .nav-logo span { color: var(--yellow); }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
   color: rgba(240,235,224,0.7); text-decoration: none; transition: color 0.15s;
 }
 .nav-links a:hover { color: var(--yellow); }
@@ -180,7 +180,7 @@ nav {
 .joia-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.1rem; color: var(--blue); }
 
 /* TEASER TIKTOK SHOP */
-.shop-teaser-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; max-width: 900px; }
+.shop-teaser-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
 .shop-teaser-item { display: block; aspect-ratio: 3/4; background: #e5dfd0; border: 2px solid var(--black); overflow: hidden; position: relative; text-decoration: none; }
 .shop-teaser-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s; }
 .shop-teaser-item:hover img { transform: scale(1.06); }
@@ -193,7 +193,7 @@ nav {
 }
 .shop-teaser-item:hover::after { opacity: 1; }
 @media (max-width: 600px) {
-  .shop-teaser-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .shop-teaser-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
   .shop-teaser-item::after { font-size: 0.55rem; padding: 0.35rem 0.15rem; }
 }
 
@@ -431,10 +431,14 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 @media (max-width: 768px) {
   .service-card-slide { min-width: calc(85%); }
 }
+@media (max-width: 900px) {
+  .nav-links { gap: 0.9rem; }
+  .nav-links a { font-size: 0.68rem; }
+}
 @media (max-width: 600px) {
-  nav { padding: 0.75rem 1rem; }
-  .nav-links { gap: 1rem; }
-  .nav-links a { font-size: 0.7rem; }
+  nav { padding: 0.75rem 1rem; flex-wrap: wrap; row-gap: 0.5rem; }
+  .nav-links { gap: 0.7rem 0.9rem; flex-wrap: wrap; justify-content: flex-end; }
+  .nav-links a { font-size: 0.62rem; }
   .hero { padding: 6rem 1.25rem 2rem; }
   .hero-title { font-size: clamp(2.5rem, 14vw, 4rem); }
   .hero-sub { font-size: 0.85rem; }
@@ -462,8 +466,10 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 <nav>
   <a href="#" class="nav-logo">BALLIN <span>BY YA</span></a>
   <ul class="nav-links">
-    <li><a href="#joias">Curadoria</a></li>
-    <li><a href="#aluguel">Aluguel</a></li>
+    <li><a href="#yaballin">YABALLIN</a></li>
+    <li><a href="#joias">Vintage Shop</a></li>
+    <li><a href="#aluguel">Curadoria de Peças</a></li>
+    <li><a href="#mais">Mais</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -505,7 +511,7 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 </div>
 
 <!-- YABALLIN (PERSONA + VÍDEOS TIKTOK) -->
-<section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
+<section id="yaballin" style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
   <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">YABALLIN</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;justify-items:center;">
     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaballin/video/7622352920134061332" data-video-id="7622352920134061332" style="max-width:100%;min-width:280px;margin:0;"><section><a target="_blank" title="@yaballin" href="https://www.tiktok.com/@yaballin?refer=embed">@yaballin</a><a target="_blank" title="♬ som original - yaballin" href="https://www.tiktok.com/music/som-original-7622353093128784648?refer=embed">♬ som original - yaballin</a></section></blockquote>
@@ -586,7 +592,7 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 </section>
 
 <!-- INSTAGRAM @yaballin -->
-<section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
+<section id="mais" style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
   <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;"><span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>No Instagram</p>
   <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">ACOMPANHE<br><span style="color:var(--yellow);">@YABALLIN</span></h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;justify-items:center;">
