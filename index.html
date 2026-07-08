@@ -440,7 +440,7 @@ function showToast(msg) {
   toast.textContent = msg;
   toast.classList.add('show');
   clearTimeout(window._toastTimer);
-  window._toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+  window._toastTimer = setTimeout(() => toast.classList.remove('show'), 5000);
 }
 
 async function expressInterest(name, available) {
@@ -454,8 +454,8 @@ async function expressInterest(name, available) {
     showToast(`Escreva: "${msg}"`);
   }
   setTimeout(() => {
-    window.open('https://ig.me/m/yayadisco', '_blank', 'noopener');
-  }, 1500);
+  window.open('https://ig.me/m/yayadisco', '_blank', 'noopener');
+}, 2500);
 }
 
 function openLightbox(img, name) {
