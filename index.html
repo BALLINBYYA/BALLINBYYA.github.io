@@ -194,7 +194,6 @@ nav {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 0.95rem;
   letter-spacing: 0.02em; color: var(--blue); text-align: center; margin-top: 0.15rem;
 }
-.shop-card-price.sold { color: #999; text-decoration: line-through; }
 .shop-card-status {
   display: block; width: 100%; background: none; border: none; cursor: pointer;
   font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.68rem;
@@ -203,7 +202,7 @@ nav {
 }
 .shop-card-status:hover { opacity: 0.65; }
 .shop-card-status.available { color: var(--blue); }
-.shop-card-status.sold { color: #999; }
+.shop-card-status.sold { color: var(--blue); }
 
 /* ============ LIGHTBOX ============ */
 .lightbox {
@@ -449,7 +448,7 @@ async function expressInterest(name, available) {
     : `Quero ser avisada quando chegar algo parecido com: ${name}`;
   try {
     await navigator.clipboard.writeText(msg);
-    showToast('Mensagem copiada! Cole na conversa que vai abrir 😊');
+    showToast('Mensagem copiada, cole na conversa que vai abrir!');
   } catch (e) {
     showToast(`Escreva: "${msg}"`);
   }
