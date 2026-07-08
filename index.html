@@ -451,19 +451,26 @@ function showToast(msg) {
   window._toastTimer = setTimeout(() => toast.classList.remove('show'), 5000);
 }
 
-async function expressInterest(name, available) {
+function expressInterest(name, available) {
   const msg = available
     ? `Quero comprar a peça: ${name}`
     : `Quero ser avisada quando chegar algo parecido com: ${name}`;
-  try {
-    await navigator.clipboard.writeText(msg);
-    showToast('Mensagem copiada, cole na conversa que vai abrir!');
-  } catch (e) {
-    showToast(`Escreva: "${msg}"`);
-  }
-  setTimeout(() => {
-  window.open('https://ig.me/m/yayadisco', '_blank', 'noopener');
-}, 2500);
+
+  navigator.clipboard.writeText(msg).catch(() => {});
+
+  document.getElementById('interestMsgText').textContent = msg;
+  document.getElementById('interestOpenBtn').onclick = () => {
+    window.open('https://ig.me/m/yayadisco', '_blank', 'noopener');
+    closeInterestModal();
+  };
+
+  document.getElementById('interestModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeInterestModal() {
+  document.getElementById('interestModal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function openLightbox(img, name) {
