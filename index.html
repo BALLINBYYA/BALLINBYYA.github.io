@@ -366,6 +366,15 @@ footer { background: var(--black); padding: 1.6rem 2.25rem; display: flex; justi
 
 <div class="toast" id="toast"></div>
 
+<div class="lightbox" id="interestModal" onclick="if(event.target===this) closeInterestModal()">
+  <button type="button" class="lightbox-close" onclick="closeInterestModal()" aria-label="Fechar">✕</button>
+  <div style="max-width:min(90vw,420px); background:var(--offwhite); padding:2rem 1.75rem; text-align:center;">
+    <p style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:0.75rem;">Mensagem copiada</p>
+    <p id="interestMsgText" style="font-size:0.95rem; line-height:1.5; margin-bottom:1.5rem; color:var(--black);"></p>
+    <button type="button" id="interestOpenBtn" class="btn btn--blue" style="width:100%; justify-content:center;">Abrir Instagram →</button>
+  </div>
+</div>
+
 <script>
 // ============ ACERVO VINTAGE SHOP ============
 // 👉 Esta é a lista mestre das peças. Pra editar:
